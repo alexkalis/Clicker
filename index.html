@@ -18,7 +18,7 @@
 
             <div class="money">
                 <h1 class="text number">€:<span class="number" id="number"></span></h1>
-                <img id="animation" class="moneySign" onclick="clicker(1)" src="money.jpg" height="400px" width="400px" class="hover"/>
+                <img id="animation" class="moneySign" onclick="clicker(1)" src="dollar.png" height="400px" width="400px" class="hover"/>
                 <h2 >Money per second:<span id="moneyPerSecond"></span></h2>
             </div>
 
@@ -36,11 +36,14 @@
                 <div class="upgrades">
                     <h2>The cost of a new grandma: <span id="grandmaCost">20</span></h2>
                     <h2 class="extrasText">Grandma's: <span id=grandma class="text">0</span></h2>
-                    <h2>+ <span id="grandma"></span></h2>
+                    <!-- <h2>+ <span id="grandma"></span></h2> -->
                     <p class="text" onclick="addGrandma()" style="color:gold">CLick to add a new grandma</p>
                 </div>
             </div>
-
+            <div class="save">
+                <button onclick="saveData()">Save data</button>
+                <button onclick="loadData()">Load data</button>
+            </div>
             <!-- <button type="button" name="button" onclick="addWorker()">Add a new worker</button> -->        <!-- </div> -->
     </body>
     <script type="text/javascript" src="index.js">

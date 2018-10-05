@@ -1,10 +1,27 @@
-let number = 0;
+let numbers = 0;
 let workers = 0;
 let grandmas = 0;
+
+function saveData() {
+    var save = {
+        numbers : numbers,
+        workers: workers,
+        grandmas : grandmas
+    }
+localStorage.setItem("save", JSON.stringify(save));
+console.log('saved');
+}
+function loadData() {
+const savegame = JSON.parse(localStorage.getItem("save"));
+if (typeof savegame.numbers !== "undefined") numbers = savegame.numbers;
+if (typeof savegame.workers !== "undefined") workers = savegame.workers;
+if (typeof savegame.grandmas !== "undefined") grandmas = savegame.grandmas;
+console.log('loaded');
+}
 function clicker(num) {
-    number = number + num;
-    document.getElementById('number').innerHTML = number;
-    // console.log(number);
+    numbers = numbers + num;
+    document.getElementById('number').innerHTML = numbers;
+    // console.log(numbers);
     var money = document.getElementById('animation');
     // shake($('.moneySign'))
     // animation: shake 0.5s;
@@ -13,11 +30,11 @@ function clicker(num) {
 function addWorker() {
 
      var workerCost = Math.floor(10 * Math.pow(1.1,workers));
-     if(number >= workerCost){
+     if(numbers >= workerCost){
     workers = workers + 1;
-    number = number - workerCost;
+    numbers = numbers - workerCost;
     document.getElementById('workers').innerHTML = workers;
-    document.getElementById('number').innerHTML = number;
+    document.getElementById('number').innerHTML = numbers;
 } else {
     var h2= document.createElement('h2');
     h2.setAttribute('id','error');
@@ -32,11 +49,11 @@ document.getElementById('workerCost').innerHTML = nextCost;
 
 function addGrandma() {
     var grandmaCost = Math.floor(20 * Math.pow(1.1,grandmas));
-    if(number >= grandmaCost) {
+    if(numbers >= grandmaCost) {
         grandmas = grandmas + 1;
-        number = number - grandmaCost;
+        numbers = numbers - grandmaCost;
         document.getElementById('grandma').innerHTML = grandmas;
-        document.getElementById('number').innerHTML = number;
+        document.getElementById('numbers').innerHTML = numbers;
     }
     var nextCost = Math.floor(20 * Math.pow(1.1,grandmas));
     document.getElementById('grandmaCost').innerHTML = nextCost;
