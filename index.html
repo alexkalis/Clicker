@@ -13,40 +13,62 @@
 
 
 <div class="version">
-    <small>Created by Alex | version 0.0.1</small>
+    <small>Created by Alex | version 0.0.2</small>
 </div>
+    <button type="button" id="settingsButton" onclick="settings()" name="button">Settings</button>
+    <div id="settings">
+        <button onclick="loadData()">Load data</button>
+        <button onclick="deleteData()">Delete data</button>
+        <button onclick="saveData()">Save data</button>
 
+        <span onclick="closeSettings()">X</span>
+    </div>
+        <div id="all">
             <div class="money">
                 <h1 class="text number">€:<span class="number" id="number"></span></h1>
-                <img id="animation" class="moneySign" onclick="clicker(1)" src="dollar.png" height="400px" width="400px" class="hover"/>
+                <img id="animation" class="moneySign" onclick="clicker(1)" src="dollar.png" height="280px" width="280px" class="hover"/>
                 <h2 >Money per second:<span id="moneyPerSecond"></span></h2>
             </div>
 
-            <div id="wrapper" class="clickable">
+            <div id="wapper clickable" class="clickable">
 
             <!--    <p class="text" style="color:gold">Click to add more money.</p> -->
             </div>
 
             <div class="allUpgrades">
-                <div class="upgrades">
-                    <h2 class="extrasText">The cost of a new worker: <span id="workerCost" class="text">10</span></h2>
-                    <h2 class="extrasText">Workers: <span id=workers class="text">0</span></h2>
-                    <p class="text" onclick="addWorker()" style="color:gold">CLick to add a new worker</p>
+                <div class="upgrades" id="wrapper">
+                    <h4 class="extrasText">The cost of a new worker: <span id="workerCost" class="text">10</span></h4>
+                    <h4 class="extrasText">Workers: <span id=workers class="text">0</span></h4>
+                    <p class="text worker" onclick="addWorker()" style="color:gold">Click to add a new worker</p>
+                    <p class="hovering">Hoeveel geld je ervan krijgt:<span class="hovering" id="workerTotal"></span></p>
+
                 </div>
-                <div class="upgrades">
-                    <h2>The cost of a new grandma: <span id="grandmaCost">20</span></h2>
-                    <h2 class="extrasText">Grandma's: <span id=grandma class="text">0</span></h2>
+
+                <div class="upgrades" id="wrapper">
+                    <h4>The cost of a new grandma: <span id="grandmaCost">20</span></h4>
+                    <h4 class="extrasText">Grandma's: <span id=grandma class="text">0</span></h4>
                     <!-- <h2>+ <span id="grandma"></span></h2> -->
                     <p class="text" onclick="addGrandma()" style="color:gold">CLick to add a new grandma</p>
+                    <p class="hovering">Hoeveel geld je ervan krijgt:<span class="hovering" id="grandmaTotal"></span></p>
+
                 </div>
+                <div class="upgrades" id="wrapper">
+                    <h4>The cost of a new banker: <span id="bankerCost">30</span></h4>
+                    <h4 class="extrasText">Bankers: <span id=banker class="text">0</span></h4>
+                    <!-- <h2>+ <span id="grandma"></span></h2> -->
+                    <p class="text" onclick="addBanker()" style="color:gold">CLick to add a new banker</p>
+                    <p class="hovering">Hoeveel geld je ervan krijgt:<span class="hovering" id="bankerTotal"></span></p>
+
+                </div>
+
             </div>
-            <div class="save">
-                <button onclick="saveData()">Save data</button>
-                <button onclick="loadData()">Load data</button>
-            </div>
+        </div>
             <!-- <button type="button" name="button" onclick="addWorker()">Add a new worker</button> -->        <!-- </div> -->
     </body>
-    <script type="text/javascript" src="index.js">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+
 
     </script>
 </html>

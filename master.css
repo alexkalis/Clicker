@@ -12,15 +12,17 @@ body {
 }
 .upgrades{
     border-style: solid;
-    width: 200px;
+    width: 304px;
 }
 .moneySign {
     margin-left: 50px;
 }
-#wrapper .text {
+.hovering {
 
-left:0px;
 visibility:hidden;
+}
+#wrapper:hover .hovering {
+visibility:visible;
 }
 .number{
     font-size: 80px;
@@ -31,30 +33,33 @@ visibility:hidden;
     border-spacing: 15px;
     position: relative;
 }
-#wrapper:hover .text {
-visibility:visible;
-}
+
 .money {
     float: left;
     border-style: solid;
     width: 497px;
-    height: 725px;
-    padding-bottom: 600px;
-    padding-right: 390px;
+    height: 683px;
+
 }
 .clickable{
     border-style: solid;
-    padding-top:10px;
-    padding-left: 8px;
-    height: 725px;
-    width: 550px;
-    padding-right: 400px;
-    margin-left:10px;
+    height: 683px;
+    width: 445px;
     float:left;
 }
 .allUpgrades{
     float: right;
-    height: 725px;
+    height: 683px;
+    width: 575px;
     border-style: solid;
-    padding-left: 50px;
+    overflow-y: scroll;
+}
+#all {
+    position: relative;
+}
+#settings {
+    border-style: solid;
+    /* width: 1000px; */
+    /* height: 400px; */
+    position: absolute;
 }
