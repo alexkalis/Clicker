@@ -6,6 +6,7 @@ body {
 }
 
 button {
+
  position: relative;
  border: none;
  display: inline-block;
@@ -20,12 +21,58 @@ button {
  margin: 36px;
  background: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png);
 }
+/*The three main divs */
+.money {
+    float: left;
+    border-right:solid;
+    width: 397px;
+    height: 650px;
+}
+.extraButtons {
+    padding: 14px 16px;
+}
+.extras  {
+    float:right;
+    border-style: solid;
+    border-spacing: 15px;
+    position: relative;
+    height: 650px;
+}
+.allUpgrades{
+    float: right;
+    height: 604px;
+    width: 475px;
+    border-left: solid;
+    overflow-y: scroll;
+}
+/*The upgrades on the right*/
 .shop{
     border-style: solid;
     /* border-color: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png); */
-    width: 550px;
+    width: 440px;
     background: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png);
 }
+/*The middle div */
+.middleDivs {
+    position: absolute;
+    border-top: solid, black;
+    border-right: solid, black;
+    width: 650px;
+    min-height: 652px;
+    max-height: 652px;
+    margin-left: 396px;
+    /* overflow-y: scroll; */
+}
+.allOptions {
+    color: white;
+    background: url(marble.jpg);
+}
+.moneyInfo {
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
+
+
 .moneySign {
     margin-left: 50px;
 }
@@ -39,60 +86,18 @@ visibility:visible;
 .number{
     font-size: 80px;
 }
-.extras  {
-    float:right;
-    border-style: solid;
-    border-spacing: 15px;
-    position: relative;
-}
 
-.money {
-    float: left;
-    border-right:solid;
-    width: 497px;
-    height: 693px;
 
-}
 .top {
-    margin-left:500px;
+    margin-left:394px;
+    margin-right: 472px;
+        padding-bottom: 50px;
+    max-height: 200px;
+    border-style:solid;
 }
-.allUpgrades{
-    float: right;
-    height: 693px;
-    width: 575px;
-    border-right: solid;
-    overflow-y: scroll;
-}
+
 #all {
     position: relative;
-}
-#prestige {
-    width: 42%;
-    background: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png);
-;
-}
-#prestigeBar {
-    width: 1%;
-   height: 30px;
-   background-color: green;
-}
-.middleDivs {
-    position: absolute;
-    border-top: solid, black;
-    border-right: solid, black;
-    width: 470px;
-    height: 693px;
-    margin-left: 497px;
-    overflow-y: scroll;
-    color: #fff;
-}
-.allOptions {
-    color: white;
-    background-color: black;
-}
-.moneyInfo {
-    color: #fff;
-    background-color: rgba(0,0,0,0.4);
 }
 /* #info {
     border-style: solid;
@@ -103,7 +108,9 @@ visibility:visible;
 } */
 .tab {
     overflow: hidden;
-    margin-left: 470px;
+    margin-left: 1044px;
+    padding-left: 11px;
+    border-left:solid;
 /* border: 1px solid #ccc; */
     /* background-color: #f1f1f1; */
 }
@@ -133,6 +140,7 @@ visibility:visible;
 .tabcontent  {
     display: none;
     padding: 6px 12px;
+
     /* border: 1px solid #ccc; */
     border-top: none;
 }

@@ -10,27 +10,43 @@
         <!-- <button type="button" name="button" onclick="clicker(1)">Click me</button> -->
     <!-- <div class="container"> -->
         <div class="top">
-            <div id="prestige">
-                <div id="prestigeBar"></div>
-            </div>
-            <div class="tab">
-                <button type="button" class="tablinks" onclick="openUpgrades(event, 'shop')" name="button" id="defaultOpen">Shop</button>
-                <button type="button" class="tablinks" onclick="openUpgrades(event, 'upgrades')" name="button">Upgrades</button>
-            </div>
+            <button type="button" class="info extraButtons" id="settingsButton" onclick="settings()" name="button">Options</button><br>
+            <button type="button" class="info extraButtons stats" id="statsButton" onclick="stats()" name="button" style="">Stats</button>
+            <!-- <small>Created by Alex | version 0.0.2</small> -->
+            <button type="button" class="info extraButtons" onclick="info()" id="infoButton" name="button" style="float:right; margin-top:-50px;">Info</button><br>
+            <button type="button" class="info extraButtons"  name="button" style="float:right; margin-top:-50px;">Prestige</button>
 
-            <small>Created by Alex | version 0.0.2</small>
-            <button type="button" class="extraButtons" id="settingsButton" onclick="settings()" name="button">Settings</button>
-            <button type="button" class="info extraButtons" onclick="info()" id="infoButton" name="button">Info</button>
         </div>
-            <div class="middleDivs allOptions" id="settings">
+        <div class="middleDivs allOptions" id="settings">
                 <button onclick="loadData()">Load data</button><br>
                 <button onclick="deleteData()">Delete data</button><br>
                 <button onclick="saveData()">Save data</button>
                 <!-- <span onclick="closeSettings()">X</span> -->
-            </div>
-            <div class="middleDivs allOptions" id="info">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
+        </div>
+        <div class="middleDivs allOptions" id="info">
+            <h2>About</h2>
+            <h3>Dit is een project gemaakt in mijn eigen tijd naast mijn standaard school projecten.</h3>
+            <h3>De inspiratie komt van het spel <a href="http://orteil.dashnet.org/cookieclicker/" target="_blank">cookie clicker</a></h3>
+            <br>
+            <h2>Geschiedenis</h2>
+            <h3>Versie 0.0.2</h3>
+            <h4>Opslaan functionaliteit toegevoegd.</h4>
+            <h4>Css toegevoegd</h4>
+            <br>
+            <h3>Versie 0.0.1</h3>
+            <h4>De click optie toegevoegd en 1 automatische optie</h4>
+        </div>
+        <div class="middleDivs allOptions" id="stats">
+            <h1 style="text-align:center">Statistieken</h1>
+            <h2>Algemeen:</h2>
+            <h4>Hoeveel geld je hebt: $<span id="numbers"></h4>
+            <h4>Hoeveel werkers je hebt:<span id="workers"></h4>
+            <h4>Hoeveel oma's je hebt:<span id="grandmas"></h4>
+            <h4>Hoeveel bankiers je hebt:<span id="bankers"></h4>
+            <br>
+            <h2>Achievements: <small>Coming soon</small></h2>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+        </div>
 
             <div id="all">
                 <div class="money" id="money">
@@ -43,11 +59,13 @@
 
                 <div id="extras" class="middleDivs">
                 </div>
+                <div class="tab">
+                    <button type="button" class="tablinks" onclick="openUpgrades(event, 'shop')" name="button" id="defaultOpen">Shop</button>
+                    <button type="button" class="tablinks" onclick="openUpgrades(event, 'upgrades')" name="button">Upgrades</button>
+                </div>
 
             <div class="allUpgrades" id="allUpgrades">
-
                 <div class="upgradeTab tabcontent" id="upgrades">
-                    <div class="test">
                     <div id="wrapper">
                         <div class="shop" id="click">
                             <h4 class="extrasText">Upgrade your click power for: <span id="clickCost" class="text">100</span></h4>
@@ -56,7 +74,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
                 <div class="shopTab tabcontent" id="shop">
                 <div id="wrapper">
                     <div class="shop" id="worker" onclick="addWorker()">

@@ -6,6 +6,9 @@ let bankers = 0;
 let multiplier = 0;
 document.getElementById("settings").style.visibility = "hidden";
 document.getElementById("info").style.visibility = "hidden";
+document.getElementById("stats").style.visibility = "hidden";
+
+
 
 //saving the game in local storage
 
@@ -18,6 +21,8 @@ function settings() {
 
     document.getElementById("extras").style.visibility = "hidden";
     document.getElementById('info').style.visibility = "hidden";
+    document.getElementById('stats').style.visibility = "hidden";
+
 
     document.getElementById("settingsButton").setAttribute("onclick","closeSettings()");
 }
@@ -26,6 +31,8 @@ function closeSettings() {
 
     document.getElementById("settings").style.visibility = "hidden";
     document.getElementById('info').style.visibility = "hidden";
+    document.getElementById('stats').style.visibility = "hidden";
+
 
     document.getElementById("settingsButton").setAttribute("onclick","settings()");
 
@@ -37,6 +44,7 @@ function info() {
     document.getElementById("extras").style.visibility = "hidden";
     document.getElementById("allUpgrades").style.visibility = "visible";
     document.getElementById('info').style.visibility = "visible";
+    document.getElementById('stats').style.visibility = "hidden";
 
     document.getElementById("infoButton").setAttribute("onclick","closeInfo()");
 }
@@ -48,6 +56,26 @@ function closeInfo() {
 
     document.getElementById("infoButton").setAttribute("onclick","info()");
 }
+function stats() {
+    document.getElementById("settings").style.visibility = "hidden";
+
+    document.getElementById("money").style.visibility = "visible";
+    document.getElementById("extras").style.visibility = "hidden";
+    document.getElementById("allUpgrades").style.visibility = "visible";
+    document.getElementById('info').style.visibility = "hidden";
+    document.getElementById('stats').style.visibility = "visible";
+
+    document.getElementById("statsButton").setAttribute("onclick","closeStats()");
+}
+function closeStats() {
+    document.getElementById("settings").style.visibility = "hidden";
+    document.getElementById("info").style.visibility = "hidden";
+
+    document.getElementById("extras").style.visibility = "visible";
+    document.getElementById('stats').style.visibility = "hidden";
+
+    document.getElementById("statsButton").setAttribute("onclick","stats()");
+}
 /*
 *when this function is called it adds a number to the number variable
 *and then updates the number element to show the different number
@@ -55,6 +83,8 @@ function closeInfo() {
 function autoClicker(num) {
     numbers = numbers + num;
     document.getElementById('number').innerHTML = numbers;
+    document.getElementById('numbers').innerHTML = numbers;
+    document.title= "Clicker €" + numbers;
 
 }
 function clicker(num) {
@@ -64,6 +94,8 @@ function clicker(num) {
         numbers = numbers + num + multiplier;
     }
     document.getElementById('number').innerHTML = numbers;
+    document.getElementById('numbers').innerHTML = numbers;
+    document.title= "Clicker €" + numbers;
 }
 /*
 *This function can be called to add a new worker
@@ -249,16 +281,16 @@ function upgradeCLick() {
     /*this is a function that loads the saved data from the localstorage and puts the data into the variables declared up above.
     *this function is automatically called when the browser is reloaded
     */
-    // (function loadData() {
-    // const savegame = JSON.parse(localStorage.getItem("save"));
-    // if (typeof savegame.numbers !== "undefined") numbers = savegame.numbers;
-    // if (typeof savegame.workers !== "undefined") workers = savegame.workers;
-    // if (typeof savegame.grandmas !== "undefined") grandmas = savegame.grandmas;
-    // if (typeof savegame.bankers !== "undefined") bankers = savegame.bankers;
-    // if (typeof savegame.multiplier !== "undefined") multiplier = savegame.multiplier;
-    //
-    // console.log('loaded');
-    // })();
+    (function loadData() {
+    const savegame = JSON.parse(localStorage.getItem("save"));
+    if (typeof savegame.numbers !== "undefined") numbers = savegame.numbers;
+    if (typeof savegame.workers !== "undefined") workers = savegame.workers;
+    if (typeof savegame.grandmas !== "undefined") grandmas = savegame.grandmas;
+    if (typeof savegame.bankers !== "undefined") bankers = savegame.bankers;
+    if (typeof savegame.multiplier !== "undefined") multiplier = savegame.multiplier;
+
+    console.log('loaded');
+    })();
     /*
     *this function deletes the data from the localStorage
     */
@@ -266,3 +298,6 @@ function upgradeCLick() {
         localStorage.removeItem("save");
         console.log('save deleted');
     }
+    document.getElementById('workers').innerHTML = workers;
+    document.getElementById('grandmas').innerHTML = grandmas;
+    document.getElementById('bankers').innerHTML = bankers;
