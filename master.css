@@ -4,21 +4,33 @@ body {
     /* border-style:solid; */
 
 }
-.container{
-    /* margin-left: 200px;
-    margin-right: 200px;
-    margin-top: 100px;
-    border-style:solid; */
+
+button {
+ position: relative;
+ border: none;
+ display: inline-block;
+ box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2),
+       inset 0px -5px 0px 0px rgba(0,0,0,0.3),
+    inset 0px 2px 0px 0px rgba(255,255,255,0.5);
+ -webkit-border-radius: 5px;
+ -moz-border-radius: 5px;
+ border-radius: 5px;
+     overflow: hidden;
+ cursor: pointer;
+ margin: 36px;
+ background: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png);
 }
-.upgrades{
+.shop{
     border-style: solid;
-    width: 304px;
+    /* border-color: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png); */
+    width: 550px;
+    background: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png);
 }
 .moneySign {
     margin-left: 50px;
 }
 .hovering {
-
+margin-right: 20px;
 visibility:hidden;
 }
 #wrapper:hover .hovering {
@@ -36,30 +48,91 @@ visibility:visible;
 
 .money {
     float: left;
-    border-style: solid;
+    border-right:solid;
     width: 497px;
-    height: 683px;
+    height: 693px;
 
 }
-.clickable{
-    border-style: solid;
-    height: 683px;
-    width: 445px;
-    float:left;
+.top {
+    margin-left:500px;
 }
 .allUpgrades{
     float: right;
-    height: 683px;
+    height: 693px;
     width: 575px;
-    border-style: solid;
+    border-right: solid;
     overflow-y: scroll;
 }
 #all {
     position: relative;
 }
-#settings {
-    border-style: solid;
-    /* width: 1000px; */
-    /* height: 400px; */
+#prestige {
+    width: 42%;
+    background: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png);
+;
+}
+#prestigeBar {
+    width: 1%;
+   height: 30px;
+   background-color: green;
+}
+.middleDivs {
     position: absolute;
+    border-top: solid, black;
+    border-right: solid, black;
+    width: 470px;
+    height: 693px;
+    margin-left: 497px;
+    overflow-y: scroll;
+    color: #fff;
+}
+.allOptions {
+    color: white;
+    background-color: black;
+}
+.moneyInfo {
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
+/* #info {
+    border-style: solid;
+    position: absolute;
+    width: 445px;
+    height: 600px;
+    margin-left: 497px;
+} */
+.tab {
+    overflow: hidden;
+    margin-left: 470px;
+/* border: 1px solid #ccc; */
+    /* background-color: #f1f1f1; */
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent  {
+    display: none;
+    padding: 6px 12px;
+    /* border: 1px solid #ccc; */
+    border-top: none;
 }
