@@ -107,10 +107,13 @@ visibility:visible;
     margin-left: 497px;
 } */
 .tab {
+
     overflow: hidden;
+    margin-top: -2.5px;
     margin-left: 1044px;
     padding-left: 11px;
     border-left:solid;
+    border-top: solid;
 /* border: 1px solid #ccc; */
     /* background-color: #f1f1f1; */
 }

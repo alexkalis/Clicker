@@ -14,13 +14,15 @@
             <button type="button" class="info extraButtons stats" id="statsButton" onclick="stats()" name="button" style="">Stats</button>
             <!-- <small>Created by Alex | version 0.0.2</small> -->
             <button type="button" class="info extraButtons" onclick="info()" id="infoButton" name="button" style="float:right; margin-top:-50px;">Info</button><br>
-            <button type="button" class="info extraButtons"  name="button" style="float:right; margin-top:-50px;">Prestige</button>
+            <button type="button" class="info extraButtons" onclick="prestige()" id="prestige" name="button" style="float:right; margin-top:-50px;">Prestige</button>
 
         </div>
         <div class="middleDivs allOptions" id="settings">
-                <button onclick="loadData()">Load data</button><br>
-                <button onclick="deleteData()">Delete data</button><br>
-                <button onclick="saveData()">Save data</button>
+                <button onclick="loadData()">Load data</button><br><br>
+                <button onclick="deleteData()">Delete data</button><br><br>
+                <button onclick="saveData()">Save data</button><br>
+                <embed id="audio" name="mojo" src="music/song.mp3" type="audio/mpeg" width="150" height="90" loop="true" autostart="true"></embed>
+                <button onclick="SetVolumeHalf()">De helft</button><button onclick="SetVolumeFull">Vol</button><button onclick="SetVolumeMute">Mute<button>
                 <!-- <span onclick="closeSettings()">X</span> -->
         </div>
         <div class="middleDivs allOptions" id="info">
@@ -39,10 +41,10 @@
         <div class="middleDivs allOptions" id="stats">
             <h1 style="text-align:center">Statistieken</h1>
             <h2>Algemeen:</h2>
-            <h4>Hoeveel geld je hebt: $<span id="numbers"></h4>
-            <h4>Hoeveel werkers je hebt:<span id="workers"></h4>
-            <h4>Hoeveel oma's je hebt:<span id="grandmas"></h4>
-            <h4>Hoeveel bankiers je hebt:<span id="bankers"></h4>
+            <h4>Hoeveel geld je hebt: $<span id="numbersStats"></h4>
+            <h4>Hoeveel werkers je hebt:<span id="workersStats"></h4>
+            <h4>Hoeveel oma's je hebt:<span id="grandmasStats"></h4>
+            <h4>Hoeveel bankiers je hebt:<span id="bankersStats"></h4>
             <br>
             <h2>Achievements: <small>Coming soon</small></h2>
             <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
@@ -78,21 +80,21 @@
                 <div id="wrapper">
                     <div class="shop" id="worker" onclick="addWorker()">
                         <h4 class="extrasText">The cost of a new worker: <span id="workerCost" class="text">10</span></h4>
-                        <h4 class="extrasText">Workers: <span id=workers class="text">0</span></h4>
+                        <h4 class="extrasText">Workers: <span id='workers' class="text">0</span></h4>
                         <p class="hovering">Hoeveel geld je ervan krijgt:<span class="hovering" id="workerTotal"></span></p>
                     </div>
                 </div>
                 <div id="wrapper">
                     <div class="shop" id="grandma" onclick="addGrandma()">
                         <h4>The cost of a new grandma: <span id="grandmaCost" class="text">20</span></h4>
-                        <h4 class="extrasText">Grandma's: <span id=grandma class="text">0</span></h4>
+                        <h4 class="extrasText">Grandma's: <span id='grandma' class="text">0</span></h4>
                         <p class="hovering">Hoeveel geld je ervan krijgt:<span class="hovering" id="grandmaTotal"></span></p>
                     </div>
                 </div>
                 <div id="wrapper">
                     <div class="shop" id="banker" onclick="addBanker()">
                         <h4>The cost of a new banker: <span id="bankerCost">30</span></h4>
-                        <h4 class="extrasText">Bankers: <span id=banker class="text">0</span></h4>
+                        <h4 class="extrasText">Bankers: <span id='banker' class="text">0</span></h4>
                         <p class="hovering">Hoeveel geld je ervan krijgt:<span class="hovering" id="bankerTotal"></span></p>
                     </div>
                 </div>
