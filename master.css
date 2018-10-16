@@ -4,57 +4,146 @@ body {
     /* border-style:solid; */
 
 }
-.container{
-    /* margin-left: 200px;
-    margin-right: 200px;
-    margin-top: 100px;
-    border-style:solid; */
-}
-.upgrades{
-    border-style: solid;
-    width: 200px;
-}
-.moneySign {
-    margin-left: 50px;
-}
-#wrapper .text {
 
-left:0px;
-visibility:hidden;
+button {
+
+ position: relative;
+ border: none;
+ display: inline-block;
+ box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2),
+       inset 0px -5px 0px 0px rgba(0,0,0,0.3),
+    inset 0px 2px 0px 0px rgba(255,255,255,0.5);
+ -webkit-border-radius: 5px;
+ -moz-border-radius: 5px;
+ border-radius: 5px;
+     overflow: hidden;
+ cursor: pointer;
+ margin: 36px;
+ background: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png);
 }
-.number{
-    font-size: 80px;
+/*The three main divs */
+.money {
+    float: left;
+    border-right:solid;
+    width: 397px;
+    height: 650px;
+}
+.extraButtons {
+    padding: 14px 16px;
 }
 .extras  {
     float:right;
     border-style: solid;
     border-spacing: 15px;
     position: relative;
-}
-#wrapper:hover .text {
-visibility:visible;
-}
-.money {
-    float: left;
-    border-style: solid;
-    width: 497px;
-    height: 725px;
-    padding-bottom: 600px;
-    padding-right: 390px;
-}
-.clickable{
-    border-style: solid;
-    padding-top:10px;
-    padding-left: 8px;
-    height: 725px;
-    width: 550px;
-    padding-right: 400px;
-    margin-left:10px;
-    float:left;
+    height: 650px;
 }
 .allUpgrades{
     float: right;
-    height: 725px;
+    height: 604px;
+    width: 475px;
+    border-left: solid;
+    overflow-y: scroll;
+}
+/*The upgrades on the right*/
+.shop{
     border-style: solid;
-    padding-left: 50px;
+    /* border-color: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png); */
+    width: 440px;
+    background: url(http://1.bp.blogspot.com/-tXavBQFjNFQ/VMSaYaq7PtI/AAAAAAAADSc/awMPRe3yu5A/s1600/wood_pattern.png);
+}
+/*The middle div */
+.middleDivs {
+    position: absolute;
+    border-top: solid, black;
+    border-right: solid, black;
+    width: 650px;
+    min-height: 652px;
+    max-height: 652px;
+    margin-left: 396px;
+    /* overflow-y: scroll; */
+}
+.allOptions {
+    color: white;
+    background: url(marble.jpg);
+}
+.moneyInfo {
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+.moneySign {
+    margin-left: 50px;
+}
+.hovering {
+margin-right: 20px;
+visibility:hidden;
+}
+#wrapper:hover .hovering {
+visibility:visible;
+}
+.number{
+    font-size: 80px;
+}
+
+
+.top {
+    margin-left:394px;
+    margin-right: 472px;
+        padding-bottom: 50px;
+    max-height: 200px;
+    border-style:solid;
+}
+
+#all {
+    position: relative;
+}
+/* #info {
+    border-style: solid;
+    position: absolute;
+    width: 445px;
+    height: 600px;
+    margin-left: 497px;
+} */
+.tab {
+
+    overflow: hidden;
+    margin-top: -2.5px;
+    margin-left: 1044px;
+    padding-left: 11px;
+    border-left:solid;
+    border-top: solid;
+/* border: 1px solid #ccc; */
+    /* background-color: #f1f1f1; */
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent  {
+    display: none;
+    padding: 6px 12px;
+
+    /* border: 1px solid #ccc; */
+    border-top: none;
 }
