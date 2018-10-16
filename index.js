@@ -10,6 +10,8 @@ document.getElementById("settings").style.visibility = "hidden";
 document.getElementById("info").style.visibility = "hidden";
 document.getElementById("stats").style.visibility = "hidden";
 document.getElementById('prestige').style.visibility = 'hidden';
+document.getElementById('prestigeTab').style.visibility = 'hidden';
+
 
 //Saving the game and other save options:
 function saveData() {
@@ -263,6 +265,9 @@ function upgradeCLick() {
     // }
 
     //starting with Prestige
+    if (prestiges >= 1) {
+        document.getElementById('prestigeTab').style.visibility = 'visible'
+    }
     window.setInterval(function() {
             if (numbers >= 1000) {
            alert('You can prestige');
