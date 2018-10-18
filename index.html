@@ -9,13 +9,18 @@
     <body>
         <!-- <button type="button" name="button" onclick="clicker(1)">Click me</button> -->
     <!-- <div class="container"> -->
+
         <div class="top">
-            <button type="button" class="info extraButtons" id="settingsButton" onclick="settings()" name="button">Options</button><br>
+            <button type="button" class="info extraButtons" id="settingsButton" onclick="settings()" name="button">Options</button>
+             <span id="messagePlace"></span><br>
             <button type="button" class="info extraButtons stats" id="statsButton" onclick="stats()" name="button" style="">Stats</button>
-            <!-- <small>Created by Alex | version 0.0.2</small> -->
+
             <button type="button" class="info extraButtons" onclick="info()" id="infoButton" name="button" style="float:right; margin-top:-50px;">Info</button><br>
             <button type="button" class="info extraButtons" onclick="prestige()" id="prestige" name="button" style="float:right; margin-top:-50px;">Prestige</button>
-
+        </div>
+        <div class="top-right" style="margin-left: 1200px; margin-top:-63px;">
+            <h2>How many times you prestiged: <span id="prestiged"></h2>
+            <h2>Amount of gold:<span id="gold"></h2>
         </div>
         <div class="middleDivs allOptions" id="settings">
                 <button onclick="loadData()">Load data</button><br><br>
@@ -56,7 +61,9 @@
                         <h2>Money per second:<span id="moneyPerSecond"></span></h2>
                         <h1 class="text number">€:<span class="number" id="number"></span></h1>
                     </div>
-                    <img id="animation" class="moneySign" onclick="clicker(1)" src="dollar.png" height="280px" width="280px" class="hover"/>
+                    <img id="animation" class="moneySign" onclick="clicker(1)" src="dollar.png" height="280px" width="280px" class="hover"/><br><br>
+                    <h5>Created by Alex | version 0.0.4</h5>
+
                 </div>
 
                 <div id="extras" class="middleDivs">
@@ -64,6 +71,7 @@
                 <div class="tab">
                     <button type="button" class="tablinks" onclick="openUpgrades(event, 'shop')" name="button" id="defaultOpen">Shop</button>
                     <button type="button" class="tablinks" onclick="openUpgrades(event, 'upgrades')" name="button">Upgrades</button>
+                    <button type="button" class="tablinks" onclick="openUpgrades(event, 'prestigeShop')" name="button">Prestiges</button>
                 </div>
 
             <div class="allUpgrades" id="allUpgrades">
@@ -98,6 +106,13 @@
                         <p class="hovering">Hoeveel geld je ervan krijgt:<span class="hovering" id="bankerTotal"></span></p>
                     </div>
                 </div>
+
+            </div>
+            <div class=" tabcontent" id="prestigeShop">
+                <h2>Prestige opties</h2>
+                <div class="shop">
+                    <h2>Coming soon</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -105,6 +120,7 @@
             <script src="jquery-3.3.1.min.js"></script>
             <script type="text/javascript" src="index.js"></script>
             <script type="text/javascript" src="tab.js"></script>
+            <script type="text/javascript" src="message.js"></script>
     </body>
 
 
