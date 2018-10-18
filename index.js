@@ -6,11 +6,54 @@ let bankers = 0;
 let multiplier = 0;
 let prestiges = 0;
 let gold = 0;
+// window.onload = function() {
 document.getElementById("settings").style.visibility = "hidden";
 document.getElementById("info").style.visibility = "hidden";
 document.getElementById("stats").style.visibility = "hidden";
 document.getElementById('prestige').style.visibility = 'hidden';
-document.getElementById('prestigeTab').style.visibility = 'hidden';
+document.getElementById('prestige').style.visibility = 'hidden';
+
+// document.getElementById('prestigeTab').style.visibility = 'hidden';
+//messages
+var messages = ['Money money money it\'s so funny', 'Give me my f**king money', 'Money doesn\'t bring you happinness']
+
+// document.getElementById('messagePlace').innerHTML = random;
+window.setInterval(function() {
+    $('#messagePlace').html(random);
+    var random = messages[Math.floor(Math.random() * messages.length)];
+    // document.getElementById('messagePlace').innerHTML = random;
+    // console.log('test')
+}, 2000);
+//starting with Prestige
+if (prestiges >= 1) {
+    document.getElementById('prestigeTab').style.visibility = 'visible'
+}
+window.setInterval(function() {
+        if (numbers >= 10) {
+       messages.push('You can prestige');
+       console.log(messages)
+       document.getElementById('prestige').style.visibility = 'visible';
+   }
+}, 10000);
+
+
+
+function prestige() {
+    prestiges = prestiges + 1;
+    var howMuchGold =  Math.floor(1 * Math.pow(1.1,prestiges));
+    gold = gold + howMuchGold;
+    console.log(prestiges);
+    if (document.getElementById('prestige').onclick) {
+        document.getElementById('prestige').style.visibility = 'hidden';
+        localStorage.removeItem("save");
+        location.reload();
+    }
+    savePrestige();
+    // console.log(prestigeAble);
+    console.log(`You have ${gold} gold`);
+    console.log('You prestiged how many times? ');
+    console.log(`Oh ${prestiges} time(s)`)
+}
 
 
 //Saving the game and other save options:
@@ -67,7 +110,7 @@ function deleteData() {
     localStorage.removeItem("save");
     console.log('save deleted');
 }
-window.onload = function loadData() {
+ (function loadData() {
     const savegame = JSON.parse(localStorage.getItem("save"));
     if (savegame == null) {
         console.log('no save');
@@ -78,9 +121,17 @@ window.onload = function loadData() {
     if (typeof savegame.bankers !== "undefined") bankers = savegame.bankers;
     if (typeof savegame.multiplier !== "undefined") multiplier = savegame.multiplier;
     console.log('loaded');
+    const savegamePrestige = JSON.parse(localStorage.getItem("prestigeSave"));
+    if (typeof savegamePrestige.prestiges !== "undefined") prestiges = savegamePrestige.prestiges;
+    if (typeof savegamePrestige.gold !== "undefined") gold = savegamePrestige.gold;
+    console.log('loaded prestige');
 }
-}
+}) ();
+$('#gold').html(gold);
+$('#prestiged').html(prestiges);
 
+
+console.log(gold);
 /*
 *this function deletes the data from the localStorage
 */
@@ -264,36 +315,14 @@ function upgradeCLick() {
     //     }
     // }
 
-    //starting with Prestige
-    if (prestiges >= 1) {
-        document.getElementById('prestigeTab').style.visibility = 'visible'
-    }
-    window.setInterval(function() {
-            if (numbers >= 1000) {
-           alert('You can prestige');
-           document.getElementById('prestige').style.visibility = 'visible';
-       }
-   }, 10000);
-
-
-
-    function prestige() {
-        prestiges = prestiges + 1;
-        var howMuchGold =  Math.floor(1 * Math.pow(1.1,prestiges));
-        gold = gold + howMuchGold;
-        console.log(prestiges);
-        if (document.getElementById('prestige').onclick) {
-            document.getElementById('prestige').style.visibility = 'hidden';
-            localStorage.removeItem("save");
-            location.reload();
-        }
-        savePrestige();
-        // console.log(prestigeAble);
-        console.log(`You have ${gold} gold`);
-        console.log('You prestiged how many times? ');
-        console.log(`Oh ${prestiges} time(s)`)
-    }
     // var prestigeAble =  Math.floor(10000 * Math.pow(1.1,prestiges));
+
+
+    // Array.prototype.randomElement = function () {
+    //     return this[Math.floor(Math.random() * this.length)]
+    // // }
+    // var myRandomElement = messages.randomElement();
+    // document.getElementById('messagePlace2').innerHTML = myRandomElement;
 
 
     // if (numbers >= prestigeAble) {
